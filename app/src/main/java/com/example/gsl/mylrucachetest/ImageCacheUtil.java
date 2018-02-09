@@ -62,6 +62,7 @@ public class ImageCacheUtil implements ImageLoader.ImageCache {
     public Bitmap getBitmap(String url) {
         if (mLruCache.get(url) != null){
             Log.d(TAG,"从内存获取");
+            return mLruCache.get(url);
         }else {
             String diskKey = hashKeyForDisk(url);
             try {
